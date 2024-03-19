@@ -41,6 +41,18 @@
       "name": "Fiddle Leaf Fig",
       "image": "./images/fiddle-leaf-fig.jpg",
       "price": 55
+    },
+    {
+      "name": "Deathicus",
+      "image": "https://www.evergreenti.com/wp-content/uploads/2018/12/shutterstock_152500682.jpg",
+      "price": "268.76",
+      "id": 8
+    },
+    {
+      "name": "Poison Ivy",
+      "image": "https://external-preview.redd.it/vw0c8gEHT2POL471DlatzJOZczub9GkW4rBv2pTdsfM.jpg?width=1080&crop=smart&auto=webp&s=dc7be2a375bdcf62ac11ee1d00d51f27ee1fb27b",
+      "price": "3.34",
+      "id": 9
     }
   ]
 }

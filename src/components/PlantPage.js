@@ -19,10 +19,27 @@ useEffect(()=> {
     .catch(error => console.error("Error fetching data:", error));   
 }, []);
 
+const handleAddPlant = (newPlant)=>{
+  fetch(url, {
+    method:'Post',
+    headers: {
+      'Content-Type':'application/json',
+    },
+    body: JSON.stringify(newPlant),
+  })
+    .then(res=>res.json())
+    .then(savedPlant => {
+      setList([...list, savedPlant]);
+    })
+    .catch(error=> console.error('Error adding plant:', error));
+
+
+}
+
 
   return (
     <main>
-      <NewPlantForm />
+      <NewPlantForm handleAddPlant={handleAddPlant}/>
       <Search />
       <PlantList list = {list} />
     </main>
