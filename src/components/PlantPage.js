@@ -4,8 +4,10 @@ import PlantList from "./PlantList";
 import Search from "./Search";
 
 function PlantPage() {
-const[list, setList] = useState([])
+const[list, setList] = useState([]);
+const[queryPlants, setQueryPlants] = useState("");
 const url = 'http://localhost:6001/plants'
+
 
 useEffect(()=> {
   fetch(url)
@@ -32,18 +34,27 @@ const handleAddPlant = (newPlant)=>{
       setList([...list, savedPlant]);
     })
     .catch(error=> console.error('Error adding plant:', error));
+};
 
+const handleSearch = (query) =>{
+    setQueryPlants(query);
+};
 
-}
-
+const displayedList = queryPlants
+    ? list.filter(listing =>
+    listing.name.toLowerCase().includes(queryPlants.toLowerCase()))
+    : list;
 
   return (
     <main>
       <NewPlantForm handleAddPlant={handleAddPlant}/>
-      <Search />
-      <PlantList list = {list} />
+      <Search 
+      handleSearch = {handleSearch} 
+      queryPlants = {queryPlants}
+      setQueryPlants = {setQueryPlants} />
+      <PlantList list = {displayedList} />
     </main>
   );
-}
+  }
 
 export default PlantPage;

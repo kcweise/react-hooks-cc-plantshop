@@ -53,6 +53,12 @@
       "image": "https://external-preview.redd.it/vw0c8gEHT2POL471DlatzJOZczub9GkW4rBv2pTdsfM.jpg?width=1080&crop=smart&auto=webp&s=dc7be2a375bdcf62ac11ee1d00d51f27ee1fb27b",
       "price": "3.34",
       "id": 9
+    },
+    {
+      "name": "Poison Oak",
+      "image": "https://lanativeplantsource.com/wp-content/uploads/2021/09/IMG_8092.jpeg",
+      "price": "15.45",
+      "id": 10
     }
   ]
 }
