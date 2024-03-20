@@ -2,13 +2,6 @@ import React from "react";
 
 function Search({queryPlants, setQueryPlants}) {
 
-
- // function handleChange(e) {
- //   e.preventDefault();
- //   handleSearch(searchQuery);
- // }
-
-
   return (
     <div className="searchbar">
       <label htmlFor="search">Search Plants:</label>

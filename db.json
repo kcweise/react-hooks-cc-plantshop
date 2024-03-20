@@ -22,7 +22,7 @@
       "id": 4,
       "name": "Pothos",
       "image": "./images/pothos.jpg",
-      "price": "20.11"
+      "price": 20.57
     },
     {
       "id": 5,
@@ -45,19 +45,19 @@
     {
       "name": "Deathicus",
       "image": "https://www.evergreenti.com/wp-content/uploads/2018/12/shutterstock_152500682.jpg",
-      "price": "268.76",
+      "price": 268.76,
       "id": 8
     },
     {
       "name": "Poison Ivy",
       "image": "https://external-preview.redd.it/vw0c8gEHT2POL471DlatzJOZczub9GkW4rBv2pTdsfM.jpg?width=1080&crop=smart&auto=webp&s=dc7be2a375bdcf62ac11ee1d00d51f27ee1fb27b",
-      "price": "3.34",
+      "price": 3.34,
       "id": 9
     },
     {
       "name": "Poison Oak",
       "image": "https://lanativeplantsource.com/wp-content/uploads/2021/09/IMG_8092.jpeg",
-      "price": "34.75",
+      "price": 34.75,
       "id": 10
     }
   ]

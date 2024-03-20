@@ -5,19 +5,22 @@ function NewPlantForm({handleAddPlant}) {
 const blankForm = {name:"", image:"", price:""}
 const[form, setForm]= useState (blankForm)
  
-
+/*handling change, destructured name and value from e.target, setting form state
+with key value pairs, when price is the key the string value will be changed to a 
+decimal number value*/
 const handleChange = (e) =>{
   const {name, value} = e.target;
-  setForm({...form, [name]:value});
+  setForm({...form, [name]:name === 'price'?parseFloat(value): value});
   }
 
+//handles submitting form, invoking hoisting function handleAddPlant in PlantPage, and
+//setting form state to original blank format
 const handleSubmit = (e) =>{
   e.preventDefault();
   handleAddPlant(form);
   setForm(blankForm);
   console.log(`Submitting data: ${form}`)
 };
-
 
   return (
     <div className="new-plant-form">

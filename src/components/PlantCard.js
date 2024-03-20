@@ -1,14 +1,15 @@
 import React, {useState} from "react";
 
 //price is renamed to initialPrice
-function PlantCard({ id, name, image, price: initialPrice }) {
+function PlantCard({ id, name, image, price: initialPrice, handleDelete }) {
  const[stock, setStock] = useState(true);
  const[isEditingPrice, setIsEditingPrice]= useState(false);
  const[price, setPrice] = useState(initialPrice);
 
+ //Sets state for toggling InStock/Outofstock
  const toggleStock = () => setStock(!stock)
 
- //sets input values to be displayed
+ //pulls user input value to set price state for render
  const handlePriceChange = (e) => {
   setPrice(e.target.value);
  }
@@ -17,26 +18,29 @@ function PlantCard({ id, name, image, price: initialPrice }) {
  const handlePriceClick=()=>{
   setIsEditingPrice(true);
  }
-//Upon clicking out of the input field sets price and POSTs to database
+
+/*Upon clicking out of the input field sets isEditingPrice to false to 
+toggle off input field and invokes updatePrice 
+price to PATCH to database*/
  const handlePriceBlur=()=> {
   setIsEditingPrice(false);
   updatePrice(id, price);
  }
 
+//Uses new price and PATCH to database to persist
 const updatePrice =(plantId, newPrice) => {
   const url = `http://localhost:6001/plants/${plantId}`;
-
   fetch(url,{
     method:'PATCH',
     headers: {'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      price: newPrice,
+      price:parseFloat(newPrice),
     }),
   })
   .then(res => {
     if(!res.ok) {
-      console.log("Error with Fetch")
+      console.error("Error with Fetch")
     }
     return res.json();
   })
@@ -44,10 +48,13 @@ const updatePrice =(plantId, newPrice) => {
     console.log("Price update was successful", updatedPlant);
   })
   .catch (error =>{
-    console.log('Error updating price', error);
+    console.error('Error updating price', error);
   });
 };
-
+//function to pass specific PlantId and invoke the hoisting function handleDelete
+const deleteStock=(plantId)=>{
+  handleDelete(plantId)
+};
   
   return (
     <li className="card" data-testid="plant-item">
@@ -66,6 +73,7 @@ const updatePrice =(plantId, newPrice) => {
       ) : (
         <button onClick={toggleStock}>Out of Stock</button>
       )}
+      <button onClick={()=>deleteStock(id)}>Delete</button>
     </li>
   );
 }

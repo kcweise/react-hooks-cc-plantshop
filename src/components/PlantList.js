@@ -1,8 +1,9 @@
 import React from "react";
 import PlantCard from "./PlantCard";
 
-function PlantList({list}) {
+function PlantList({list, handleDelete}) {
   
+  //.map renders list of plants
   return (
     <ul className="cards">
       {list.map((plant)=>(
@@ -12,6 +13,7 @@ function PlantList({list}) {
       name ={plant.name}
       image = {plant.image}
       price = {plant.price}
+      handleDelete = {handleDelete}
       />
       ))}
       
