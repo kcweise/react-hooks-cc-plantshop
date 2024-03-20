@@ -22,7 +22,7 @@
       "id": 4,
       "name": "Pothos",
       "image": "./images/pothos.jpg",
-      "price": 12.11
+      "price": "20.11"
     },
     {
       "id": 5,
@@ -57,7 +57,7 @@
     {
       "name": "Poison Oak",
       "image": "https://lanativeplantsource.com/wp-content/uploads/2021/09/IMG_8092.jpeg",
-      "price": "15.45",
+      "price": "34.75",
       "id": 10
     }
   ]
