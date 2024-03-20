@@ -13,19 +13,19 @@ useEffect(()=> {
   fetch(url)
     .then (res => {
       if (!res.ok) {
-        console.error("Error fetching data");
+        console.log("Error fetching data");
       }
       return res.json();       
     })
     .then (data => setList(data))
-    .catch(error => console.error("Error fetching data:", error));   
+    .catch(error => console.log("Error fetching data:", error));   
 }, []);
 
 const handleAddPlant = (newPlant)=>{
   fetch(url, {
-    method:'Post',
+    method:'POST',
     headers: {
-      'Content-Type':'application/json',
+      'Content-Type':'Application/JSON',
     },
     body: JSON.stringify(newPlant),
   })
@@ -33,7 +33,7 @@ const handleAddPlant = (newPlant)=>{
     .then(savedPlant => {
       setList([...list, savedPlant]);
     })
-    .catch(error=> console.error('Error adding plant:', error));
+    .catch(error=> console.log('Error adding plant:', error));
 };
 
 const handleSearch = (query) =>{

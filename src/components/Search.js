@@ -1,6 +1,6 @@
 import React from "react";
 
-function Search({handleSearch, queryPlants, setQueryPlants}) {
+function Search({queryPlants, setQueryPlants}) {
 
 
  // function handleChange(e) {
