@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import PlantCard from "./PlantCard";
 
 function PlantList({list}) {
@@ -11,7 +11,8 @@ function PlantList({list}) {
       id = {plant.id}
       name ={plant.name}
       image = {plant.image}
-      price = {plant.price}/>
+      price = {plant.price}
+      />
       ))}
       
     </ul>
